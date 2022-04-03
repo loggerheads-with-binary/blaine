@@ -1,0 +1,88 @@
+name: blaine
+version: "1.3.1"
+author:  "Aniruddh Anna<@aniruddh.iitb.92@protonmail.com>"
+about: "Manages Battery, Disk Statuses.\nWritten in Rust, made with love\nNow with more sophisticated management system.\n\nAs a good practice, invoke `blaine_s`for help/stdout output. And `blaine` for background executable\nNeeded Custom Binaries: c-trans, notif, melissa-alerts, echelon4"
+
+args:
+    - sleep_time :
+        short: s
+        long: sleep-time
+        value_name: SLEEP(in s)
+        about : "How long to sleep for Blaine Battery Calls"
+        takes_value: true
+        default_value: "75"
+
+    - low_battery :
+        short: L
+        long: low-battery
+        value_name : LOW BATTERY(in %)
+        about : "Lower limit(in %) of charge of the battery beyond which notifications can be sent."
+        takes_value : true
+        default_value : "22"
+
+    - high_battery :
+        short : H
+        long : high-battery
+        value_name : HIGH BATTERY(in %)
+        about : "High Battery(in %) of the charge of the battery beyond which it becomes unhealthy[Switched off by absurdity for 1.3 implementation under vanessa]"
+        takes_value : true
+        default_value : "2085"
+
+    - low_critical :
+        short : C
+        long : critical-low
+        value_name : CRITICAL LOW BATTERY(in %)
+        about : "Critically Low Battery(in %) beneath which the machine may shut down"
+        takes_value : true
+        default_value : "16"
+
+    - high_critical :
+        short : Q
+        long: critical-high
+        value_name : CRITICAL HIGH BATTERY(in %)
+        about : "Critically high battery(in %) beyond which long term battery damage may occur"
+        takes_value : true
+        default_value : "91"
+
+    - super_low_critical :
+        short : S
+        long: super-low-critical
+        value_name : SUPER CRITICAL BATTERY (in %)
+        about : Super critically low battery beneath which system will be hibernated via echelon4
+        takes_value : true
+        default_value : "11"
+
+    - disk_monitor_sleep_time :
+        short : D
+        long : disks-sleep-time
+        value_name : DISKS SLEEP TIME(in s)
+        takes_value : true
+        about : "Duration of each disk check cycle (in s)"
+        default_value : "5"
+
+    - disks_max_warnings :
+
+        short : w
+        long : disks-notif-warnings-max
+        about : Maximum Warnings for Missing Disks before Melissa Alerts are sent to user
+        value_name : MAX-NOTIF
+        takes_value : true
+        default_value : "0"
+
+    - disks_upper_limit_warnings :
+        short : W
+        long: disks-warnings-max
+        about : Maximum Disk Warnings after which Blaine starts ignoring it
+        value_name : MAX-TOTAL
+        takes_value : true
+        default_value : "20"
+
+    - no_battery_monitor :
+        long : no-battery-monitor
+        about : The Blaine Battery Monitor will be switched off(since v 1.2, Battery Monitor is enabled by default)
+        takes_value : false
+
+    - disk_monitor :
+        long : disk-monitor
+        about : The Blaine Disk Monitor will be instantiated(since v 1.2, only Battery Monitor is enabled by default)
+        takes_value : false

@@ -1,0 +1,28 @@
+[package]
+name = "Blaine"
+version = "0.1.0"
+authors = ["Aniruddh Anna"]
+
+[dependencies]
+battery = "0.7.8"
+fstrings = "*"
+lazy_static = "*"
+# 	#subprocess-communicate = "*"
+# 	#single-instance = "*"
+# 	#dialog = "*"
+msgbox = "*"
+#interfaces = "*"
+# 	#rodio = "*"
+#pnet = "*"
+clap = { version = "3.0.0-beta.4", features = ["yaml"] }
+cute = "*"
+log = "*"
+simple_logger = "1.13.0"
+env_logger = "0.8.4"
+flexi_logger = "*"
+simplelog = "*"
+
+
+[features]
+visible = []		##Activate only for logging
+log_stderr = [] 	##Activate only for console logging; but always activate along with visible

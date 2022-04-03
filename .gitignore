@@ -1,0 +1,19 @@
+
+##Config Files
+**/desktop.ini
+
+##Backup Files
+**/*.bak
+*.bak
+
+##Python builds
+__pycache__
+**/__pycache__
+
+
+**/Cargo.lock
+Blaine.Rust/target*
+Blaine.Rust/final_exes
+Blaine Beta CPP
+Sounds/Spleeter Deezer
+
